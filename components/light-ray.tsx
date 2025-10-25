@@ -8,7 +8,7 @@ const LightRaySection = () => {
 
   // Dark: blue (good on dark backgrounds)
   // Light: warm amber (good contrast on light backgrounds)
-  const raysColor = isDark ? "#1055C9" : "#9AE6E680";
+  const raysColor = isDark ? "#1055C9" : "#A3CCDA";
 
   return (
     <div className="absolute min-h-screen inset-0 top-0 z-[-1]">
