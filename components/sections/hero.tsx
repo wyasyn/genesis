@@ -1,11 +1,14 @@
 import IntroHeroSection from "../intro";
+import { DotBackground } from "../dots-background";
 
 const Hero = () => {
   return (
     <section>
-      <div className="container ">
-        <IntroHeroSection />
-      </div>
+      <DotBackground>
+        <div>
+          <IntroHeroSection />
+        </div>
+      </DotBackground>
     </section>
   );
 };

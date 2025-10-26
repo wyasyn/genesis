@@ -7,9 +7,9 @@ import {
   IconLibraryFilled,
   IconMail,
   IconMailFilled,
+  IconUser,
   IconUserFilled,
 } from "@tabler/icons-react";
-import { User } from "lucide-react";
 
 export const navData = [
   {
@@ -25,7 +25,7 @@ export const navData = [
     href: "/about",
     icons: {
       active: IconUserFilled,
-      inactive: User,
+      inactive: IconUser,
     },
   },
   {
@@ -52,4 +52,4 @@ export const navData = [
       inactive: IconMail,
     },
   },
-];
+] as const; // Added 'as const' for better type inference
