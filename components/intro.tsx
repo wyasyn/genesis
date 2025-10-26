@@ -27,19 +27,28 @@ const textVariants = {
 
 export default function IntroSection() {
   const [scrollY, setScrollY] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleMouseMove = (e: MouseEvent) => {
+      // Normalize mouse position to -1 to 1 range
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      setMousePosition({ x, y });
+    };
 
-  const headingLines = ["I build smart systems", "and beautiful apps."];
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <section className="relative flex flex-col justify-center min-h-[90vh] text-foreground overflow-hidden">
       {/* Background name text with parallax and blur */}
-
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -52,44 +61,40 @@ export default function IntroSection() {
         </span>
         <span className="text-sm font-medium">Available for projects</span>
       </motion.div>
+
       <div
         className="absolute inset-0 flex justify-center items-center pointer-events-none"
-        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        style={{
+          transform: `translate(${mousePosition.x * 30}px, ${
+            scrollY * 0.3 + mousePosition.y * 20
+          }px)`,
+          transition: "transform 0.3s ease-out",
+        }}
       >
-        <h1
+        <div
           aria-hidden="true"
           className="text-[20vw] md:text-[12vw] font-extrabold text-muted-foreground/10 select-none leading-none blur-[2px]"
         >
           <FloatingIcons />
           YASIN WALUM
-        </h1>
+        </div>
       </div>
 
       {/* Foreground content */}
       <div className="relative z-10">
-        {/* Animated heading */}
-        <div className="space-y-2">
-          {headingLines.map((line, i) => (
-            <motion.h1
-              key={i}
-              custom={i}
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              className="text-4xl md:text-6xl font-bold leading-tight"
-            >
-              {i === 0 ? (
-                <>
-                  I build <span className="text-primary">smart systems</span>
-                </>
-              ) : (
-                <>
-                  and <span className="text-primary">beautiful apps.</span>
-                </>
-              )}
-            </motion.h1>
-          ))}
-        </div>
+        {/* Main heading - single h1 for SEO with visually hidden name */}
+        <motion.h1
+          custom={0}
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          className="text-4xl md:text-6xl font-bold leading-tight"
+        >
+          <span className="sr-only">Yasin Walum - </span>I build{" "}
+          <span className="text-primary">smart systems</span>
+          <br />
+          and <span className="text-primary">beautiful apps</span>
+        </motion.h1>
 
         {/* Description */}
         <motion.p
@@ -102,13 +107,11 @@ export default function IntroSection() {
                 : 1.2,
             duration: 0.7,
           }}
-          className="text-muted-foreground mt-6 max-w-2xl"
+          className="text-muted-foreground mt-6 max-w-2xl text-lg"
         >
-          Meet{" "}
-          <span className="font-semibold text-foreground">Yasin Walum</span>, a
-          fast-learning computer scientist passionate about AI, full-stack
+          A fast-learning computer scientist passionate about AI, full-stack
           development, and building elegant, impactful digital experiences.
-          Whether it&apos;s machine learning models or sleek UIs, Yasin loves
+          Whether it&apos;s machine learning models or sleek UIs, I love
           bringing ideas to life through technology.
         </motion.p>
 
@@ -123,7 +126,7 @@ export default function IntroSection() {
                 : 1.6,
             duration: 0.7,
           }}
-          className="text-muted-foreground mt-6"
+          className="text-muted-foreground mt-4"
         >
           Currently leading the{" "}
           <span className="font-semibold text-foreground">
@@ -190,6 +193,7 @@ export default function IntroSection() {
           </div>
         </motion.div>
       </div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

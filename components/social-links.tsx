@@ -27,7 +27,7 @@ export const SocialLinks = ({
   return (
     <div
       className={cn(
-        "flex gap-3",
+        "flex",
         variant === "vertical" ? "flex-col" : "flex-row items-center",
         className
       )}
@@ -55,8 +55,10 @@ export const SocialLinks = ({
                     rel="noopener noreferrer"
                     aria-label={social.name}
                     className={cn(
-                      "group relative p-2 rounded-full transition-all duration-300",
+                      "group relative flex items-center justify-center",
+                      "w-10 h-10 rounded-full transition-all duration-300",
                       "text-muted-foreground hover:bg-muted",
+                      "no-underline hover:no-underline",
                       social.hoverColor
                     )}
                   >

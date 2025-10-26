@@ -15,7 +15,7 @@ export const ThemeToggleNav = () => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
+      className="p-2 hidden sm:inline-block rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
