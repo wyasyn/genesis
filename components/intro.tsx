@@ -251,15 +251,15 @@ export default function IntroSection() {
               Connect with me:
             </span>
             <SocialLinks iconSize={20} />
-            <span className="inline-flex items-center gap-2 text-xs">
-              <img
-                src="https://flagcdn.com/w20/ug.png"
-                alt="Uganda flag"
-                width="20"
-                height="15"
-              />
-              Kampala, Uganda
-            </span>
+          </div>
+          <div className="inline-flex items-center gap-2 text-xs mt-8">
+            <img
+              src="https://flagcdn.com/w20/ug.png"
+              alt="Uganda flag"
+              width="20"
+              height="15"
+            />
+            Kampala, Uganda
           </div>
         </motion.div>
       </div>

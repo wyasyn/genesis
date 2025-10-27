@@ -3,7 +3,7 @@ import { navData } from "@/data/nav-data";
 import { NavIcon } from "./nav-icon";
 import { useIsMounted } from "@/hooks";
 import { motion } from "motion/react";
-import { ThemeToggleNav } from "./mode-toggle";
+import { ModeToggle } from "./mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
 
@@ -49,7 +49,7 @@ const Navbar = () => {
           aria-hidden="true"
         />{" "}
         {/* Divider */}
-        <ThemeToggleNav />
+        <ModeToggle />
       </nav>
     </motion.header>
   );

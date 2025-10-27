@@ -49,8 +49,8 @@ export function TestimonialsStars() {
       <div>
         <div className="container mx-auto w-full max-w-5xl px-6">
           <SectionHeader
-            title="What Our Customers Say"
-            description="Trusted by developers worldwide. Hear directly from customers who have transformed their projects with SmoothUI."
+            title="What Clients Say"
+            description="Hear from our satisfied clients who have transformed their projects with SmoothUI."
           />
 
           <motion.div
