@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { easeOut, motion } from "motion/react";
@@ -52,8 +53,8 @@ export default function IntroSection() {
       <motion.div
         className="absolute inset-0 justify-center items-center pointer-events-none hidden md:flex"
         style={{
-          transform: `translate(${mousePosition.x * 30}px, ${
-            scrollY * 0.3 + mousePosition.y * 20
+          transform: `translate(${mousePosition.x * -30}px, ${
+            scrollY * 0.3 + mousePosition.y * -20
           }px)`,
           transition: "transform 0.3s ease-out",
         }}
@@ -250,6 +251,15 @@ export default function IntroSection() {
               Connect with me:
             </span>
             <SocialLinks iconSize={20} />
+            <span className="inline-flex items-center gap-2 text-xs">
+              <img
+                src="https://flagcdn.com/w20/ug.png"
+                alt="Uganda flag"
+                width="20"
+                height="15"
+              />
+              Kampala, Uganda
+            </span>
           </div>
         </motion.div>
       </div>

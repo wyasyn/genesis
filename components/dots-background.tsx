@@ -11,7 +11,7 @@ export function DotBackground({ children }: { children: React.ReactNode }) {
         )}
       />
       {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center  mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] bg-background "></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center  mask-[radial-gradient(ellipse_at_center,transparent_20%,var(--background))] bg-background "></div>
       <div className=" relative z-20 container ">{children}</div>
     </div>
   );

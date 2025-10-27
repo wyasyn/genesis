@@ -5,9 +5,7 @@ const Hero = () => {
   return (
     <section>
       <DotBackground>
-        <div>
-          <IntroHeroSection />
-        </div>
+        <IntroHeroSection />
       </DotBackground>
     </section>
   );
