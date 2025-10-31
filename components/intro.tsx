@@ -171,9 +171,8 @@ export default function IntroSection() {
           }}
           className="text-muted-foreground mt-5 max-w-xl text-base md:text-lg"
         >
-          I’m a computer scientist passionate about blending AI, design, and
-          full-stack development to build seamless, human-centered digital
-          experiences.
+          I’m a full-stack developer from Uganda. I love building the web to
+          solve problems and express myself.
         </motion.p>
 
         {/* Highlight */}
@@ -187,13 +186,10 @@ export default function IntroSection() {
                 : 1.3,
             duration: 0.7,
           }}
-          className="text-muted-foreground mt-4"
+          className="text-muted-foreground  max-w-xl text-base md:text-lg mt-4"
         >
-          Currently leading the{" "}
-          <span className="font-semibold text-foreground">
-            Aurora Skin Analyzer
-          </span>{" "}
-          — an AI-powered project revolutionizing skincare.
+          I focus on accessibility, inclusive design and progressive enhancement
+          to create a user experience that puts people first.
         </motion.p>
 
         {/* Buttons */}

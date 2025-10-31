@@ -27,14 +27,9 @@ export function BlogItems() {
       description:
         "How to design with gestures and motion that feel intuitive and natural.",
     },
-    {
-      title: "Sick title",
-      description:
-        "How to design with gestures and motion that feel intuitive and natural.",
-    },
   ];
   return (
-    <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="relative grid grid-cols-1 sm:grid-cols-2  gap-6">
       {cards.map((card, idx) => (
         <MinimalCard key={idx}>
           <MinimalCardImage
