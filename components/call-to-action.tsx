@@ -81,7 +81,7 @@ export default function CTASection() {
             </div>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-serif lg:text-6xl font-bold mb-6 tracking-tight">
             Let&apos;s Build Something
             <br />
             <span className="text-primary">Amazing Together</span>

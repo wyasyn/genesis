@@ -53,7 +53,7 @@ export function ProjectsGrid({
   const isFeatured = variant === "featured";
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
+    <section className="relative overflow-clip">
       {/* Background decoration */}
       <motion.div
         className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
@@ -82,7 +82,7 @@ export function ProjectsGrid({
         }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className=" relative z-10">
         <div
           className="grid gap-6 lg:gap-8"
           style={{
@@ -176,7 +176,7 @@ export function ProjectsGrid({
 
                     {/* Bottom gradient (always visible) */}
                     <div
-                      className="absolute inset-0 bg-linear-to-t from-black via-black/95 to-transparent z-10"
+                      className="absolute inset-0 bg-linear-to-t from-background via-background/95 to-transparent z-10"
                       style={{
                         background:
                           "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background) / 0.95) 30%, transparent 60%)",

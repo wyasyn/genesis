@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { ModeToggle } from "./mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
+import Pic from "./pic";
 
 const Navbar = () => {
   const mounted = useIsMounted();
@@ -24,19 +25,7 @@ const Navbar = () => {
                    bg-card/50 backdrop-blur-sm shadow-sm border rounded-3xl gap-4"
         aria-label="Main navigation"
       >
-        <Link
-          href="/"
-          className=" hidden sm:inline-block group relative transition-transform hover:scale-105 duration-200"
-          aria-label="Go to homepage - Yasin Walum"
-        >
-          <Avatar className="ring-2 ring-transparent group-hover:ring-primary/50 transition-all duration-200">
-            <AvatarImage
-              src="https://res.cloudinary.com/dkdteb9m5/image/upload/v1731179025/personal%20finance/lj5hjqhmvaeqdsrfcwky.jpg"
-              alt="Yasin Walum - Computer Scientist and Full-Stack Developer"
-            />
-            <AvatarFallback>YW</AvatarFallback>
-          </Avatar>
-        </Link>
+        <Pic />
         <div
           className="w-px h-6 bg-border hidden sm:inline-block"
           aria-hidden="true"

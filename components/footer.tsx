@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { SocialLinks } from "./social-links";
+import Pic from "./pic";
 
 const Logo = () => (
   <div className="flex items-center gap-2">
+    <Pic />
     <span className="text-xl font-bold">Yasin Walum</span>
   </div>
 );
@@ -105,9 +106,8 @@ export default async function FooterSection() {
       <div>
         <div className="container grid gap-12 md:grid-cols-5">
           <div className="md:col-span-2">
-            <Link href="/" aria-label="go home" className="block size-fit">
-              <Logo />
-            </Link>
+            <Logo />
+
             <p className="mt-4 text-sm ">
               Full Stack Developer based in Uganda.
               <br />

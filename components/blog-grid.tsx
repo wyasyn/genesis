@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface BlogPost {
   id: string;
@@ -43,11 +44,8 @@ export function BlogGrid({
   const isFeatured = variant === "featured";
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section className=" relative overflow-clip">
+      <div className=" relative z-10">
         <div
           className="grid gap-8 lg:gap-12"
           style={{
@@ -75,7 +73,7 @@ export function BlogGrid({
               >
                 <Card
                   className={cn(
-                    "group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-border hover:shadow-2xl transition-all duration-500 h-full flex flex-col",
+                    "group relative overflow-clip border-border/50 bg-card/50 backdrop-blur-sm hover:border-border hover:shadow-2xl transition-all duration-500 h-full flex flex-col",
                     isFirstPost && "lg:flex-row"
                   )}
                 >
@@ -89,7 +87,13 @@ export function BlogGrid({
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   >
                     {/* Placeholder image with gradient */}
-                    <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-secondary/20 to-primary/20" />
+                    <Image
+                      src={post.coverImage}
+                      fill
+                      alt={post.title}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 inset-0"
+                    />
 
                     {/* Category badge */}
                     <motion.div
