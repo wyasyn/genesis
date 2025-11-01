@@ -1,3 +1,4 @@
+import CTASection from "@/components/call-to-action";
 import LogoCloud from "@/components/logo-cloud";
 import BlogSection from "@/components/sections/blog-section";
 import Hero from "@/components/sections/hero";
@@ -12,6 +13,7 @@ const MainHomePage = () => {
       <ProjectSection />
       <BlogSection />
       <TestimonialsStars />
+      <CTASection />
     </div>
   );
 };
