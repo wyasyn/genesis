@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 export function DotBackground({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex h-70vh ">
+    <div className="relative flex h-screen ">
       <div
         className={cn(
           "absolute inset-0",

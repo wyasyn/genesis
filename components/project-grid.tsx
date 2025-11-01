@@ -242,14 +242,17 @@ export function ProjectsGrid({
                 size="lg"
                 variant="outline"
                 className="gap-2 group shadow-lg hover:shadow-xl transition-all"
+                asChild
               >
-                View All Projects
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
+                <Link href={viewAllHref}>
+                  View All Projects
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.div>
+                </Link>
               </Button>
             </motion.div>
           </motion.div>

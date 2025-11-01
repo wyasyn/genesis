@@ -5,7 +5,7 @@ import { mockProjects } from "@/data/projects";
 
 const ProjectSection = () => {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-24">
       <div className="container ">
         <SectionHeader
           title="Featured Work"

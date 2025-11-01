@@ -1,13 +1,15 @@
-import LogoCloud from "@/components/logo-cloud";
+import LightRaySection from "@/components/light-ray";
 import BlogSection from "@/components/sections/blog-section";
 import Hero from "@/components/sections/hero";
+import AboutSection from "@/components/sections/home-about";
 import ProjectSection from "@/components/sections/projects";
 
 const MainHomePage = () => {
   return (
     <div>
+      <LightRaySection />
       <Hero />
-      <LogoCloud />
+      <AboutSection />
       <ProjectSection />
       <BlogSection />
     </div>

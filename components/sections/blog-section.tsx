@@ -5,7 +5,7 @@ import { mockBlogPosts } from "@/data/blog";
 
 const BlogSection = () => {
   return (
-    <section className=" py-24 md:py-32">
+    <section className=" py-24">
       <div className="container">
         <SectionHeader
           title="From the Blog"

@@ -1,6 +1,5 @@
 import CTASection from "@/components/call-to-action";
 import Footer from "@/components/footer";
-import LightRaySection from "@/components/light-ray";
 import Navbar from "@/components/nav-bar";
 import { ReadingProgress } from "@/components/reading-progress";
 import { TestimonialsStars } from "@/components/Testimonials";
@@ -12,7 +11,6 @@ const FrontLayout = ({
 }>) => {
   return (
     <div className="flex flex-col min-h-dvh">
-      <LightRaySection />
       <ReadingProgress />
       <Navbar />
       <main className="flex-1">
