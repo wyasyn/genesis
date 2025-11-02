@@ -7,12 +7,12 @@ import { useIsMounted } from "@/hooks";
 
 export function ModeToggle() {
   const mounted = useIsMounted();
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   if (!mounted) return null;
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   return (
