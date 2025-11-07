@@ -92,6 +92,7 @@ export function TestimonialsStars() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <SectionHeader
+            text="Testimonials"
             title="What Clients Say"
             description="Hear from our satisfied clients who have transformed their projects with SmoothUI."
           />

@@ -383,6 +383,7 @@ export default function ContactPage() {
                                   id="name"
                                   name="name"
                                   type="text"
+                                  required
                                   placeholder="John Doe"
                                   value={formState.name}
                                   onChange={handleChange}
@@ -402,6 +403,7 @@ export default function ContactPage() {
                                   id="email"
                                   name="email"
                                   type="email"
+                                  required
                                   placeholder="john@example.com"
                                   value={formState.email}
                                   onChange={handleChange}
@@ -421,6 +423,7 @@ export default function ContactPage() {
                                   id="subject"
                                   name="subject"
                                   type="text"
+                                  required
                                   placeholder="Project Collaboration Opportunity"
                                   value={formState.subject}
                                   onChange={handleChange}
@@ -442,6 +445,7 @@ export default function ContactPage() {
                                 <Textarea
                                   id="message"
                                   name="message"
+                                  required
                                   placeholder="Hi Yasin, I'd like to discuss..."
                                   value={formState.message}
                                   onChange={handleChange}
@@ -461,6 +465,7 @@ export default function ContactPage() {
                                 onClick={handleSubmit}
                                 size="lg"
                                 disabled={isSubmitting}
+                                type="submit"
                                 className="w-full h-12 rounded-xl flex items-center justify-center gap-2 group relative overflow-hidden"
                               >
                                 <span className="relative z-10 flex items-center gap-2">

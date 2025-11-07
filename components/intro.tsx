@@ -176,7 +176,7 @@ export default function IntroSection() {
         </motion.p>
 
         {/* Highlight */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -190,7 +190,7 @@ export default function IntroSection() {
         >
           I focus on accessibility, inclusive design and progressive enhancement
           to create a user experience that puts people first.
-        </motion.p>
+        </motion.p> */}
 
         {/* Buttons */}
         <motion.div

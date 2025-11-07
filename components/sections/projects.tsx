@@ -8,6 +8,7 @@ const ProjectSection = () => {
     <section className="py-24">
       <div className="container ">
         <SectionHeader
+          text="Projects"
           title="Featured Work"
           description="A curated collection of projects showcasing innovative solutions, creative problem-solving, and cutting-edge technologies. Each project represents a unique challenge and the journey to overcome it."
         />
