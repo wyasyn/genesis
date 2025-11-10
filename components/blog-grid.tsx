@@ -2,7 +2,6 @@
 
 import { motion } from "motion/react";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";

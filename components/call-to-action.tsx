@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Section } from "./pages/about-page";
+import { Button } from "./ui/button";
 
 export default function CTASection() {
   return (
@@ -17,7 +18,7 @@ export default function CTASection() {
               Let&apos;s Build Something{" "}
               <span className="text-primary">Amazing</span>
             </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground  mb-8 max-w-2xl mx-auto">
               I&apos;m always excited to take on new challenges and collaborate
               on interesting projects. Whether you have a project in mind or
               just want to chat about tech, feel free to reach out!
@@ -27,17 +28,23 @@ export default function CTASection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
               >
-                Get in Touch
+                <Button size={"sm"} className="cursor-pointer">
+                  Get in Touch
+                </Button>
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/projects"
-                className="px-8 py-3 rounded-xl bg-card border border-border font-medium hover:border-primary/50 transition-colors"
               >
-                View My Work
+                <Button
+                  size={"sm"}
+                  variant={"outline"}
+                  className="cursor-pointer"
+                >
+                  View My Work
+                </Button>
               </motion.a>
             </div>
           </div>

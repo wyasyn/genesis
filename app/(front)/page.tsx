@@ -2,7 +2,7 @@ import LightRaySection from "@/components/light-ray";
 import BlogSection from "@/components/sections/blog-section";
 import Hero from "@/components/sections/hero";
 import AboutSection from "@/components/sections/home-about";
-import ProjectSection from "@/components/sections/projects";
+import ProjectsSection from "@/components/sections/project-seection";
 
 const MainHomePage = () => {
   return (
@@ -10,7 +10,7 @@ const MainHomePage = () => {
       <LightRaySection />
       <Hero />
       <AboutSection />
-      <ProjectSection />
+      <ProjectsSection />
       <BlogSection />
     </div>
   );
