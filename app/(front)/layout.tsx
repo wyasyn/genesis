@@ -16,6 +16,7 @@ const FrontLayout = ({
       <main className="flex-1">
         {children}
         <TestimonialsStars />
+
         <CTASection />
       </main>
       <Footer />
