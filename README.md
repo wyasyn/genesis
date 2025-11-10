@@ -34,3 +34,57 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## getting blog usage
+
+```ts
+// Get all blogs (default pagination)
+const data = await getAllBlogs();
+
+// Get published blogs only
+const published = await getPublishedBlogs({ page: 1, limit: 10 });
+
+// Get specific blog by slug
+const blog = await getBlogBySlug("my-blog-post-slug");
+
+// Get blogs by tag
+const tagged = await getBlogsByTag("typescript", { page: 1 });
+
+// Search blogs
+const results = await searchBlogs("react hooks", { page: 1 });
+
+// Error handling
+try {
+  const blog = await getBlogBySlug("non-existent");
+} catch (error) {
+  console.error(error.message); // "Blog post not found"
+  console.error(error.status); // 404
+}
+```
+
+## getting projects usage
+
+```ts
+// Get single project by slug (CHANGED)
+const project = await getProjectBySlug("my-portfolio-website");
+
+// Get all projects (same)
+const projects = await getAllProjects({ page: 1, limit: 10 });
+
+// Get featured projects (same)
+const featured = await getFeaturedProjects();
+
+// NEW: Filter by tag
+const reactProjects = await getProjectsByTag("react");
+
+// NEW: Filter by tech stack
+const nextjsProjects = await getProjectsByStack("Next.js");
+
+// Error handling
+try {
+  const data = await getAllProjects();
+} catch (error) {
+  console.error(error.message); // User-friendly error message
+  console.error(error.status); // HTTP status code
+}
+```

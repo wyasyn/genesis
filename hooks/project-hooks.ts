@@ -4,6 +4,7 @@ import axios, { AxiosError } from "axios";
 export interface Project {
   id: string;
   title: string;
+  slug: string;
   description: string;
   tags: string[];
   stack: string[];
@@ -57,7 +58,7 @@ export interface ApiError {
 
 // Configuration
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api/v1";
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
 
 // Create axios instance with default config
 const apiClient = axios.create({
@@ -71,10 +72,7 @@ const apiClient = axios.create({
 // Error handler utility
 const handleApiError = (error: unknown): ApiError => {
   if (axios.isAxiosError(error)) {
-    const axiosError = error as AxiosError<{
-      message?: string;
-      error?: string;
-    }>;
+    const axiosError = error as AxiosError<ApiErrorDetails>;
 
     return {
       message:
@@ -132,27 +130,27 @@ export const getAllProjects = async (
 };
 
 /**
- * Fetches a single project by ID
- * @param id - The project ID
+ * Fetches a single project by slug
+ * @param slug - The project slug (e.g., "my-portfolio-website")
  * @returns Promise with the project data
  * @throws ApiError with details about the failure
  */
-export const getProjectById = async (
-  id: string
+export const getProjectBySlug = async (
+  slug: string
 ): Promise<SingleProjectResponse> => {
   try {
-    if (!id || id.trim() === "") {
-      throw new Error("Project ID is required");
+    if (!slug || slug.trim() === "") {
+      throw new Error("Project slug is required");
     }
 
     const response = await apiClient.get<SingleProjectResponse>(
-      `/projects/${id}`
+      `/projects/${slug}`
     );
 
     return response.data;
   } catch (error) {
     const apiError = handleApiError(error);
-    console.error(`Error fetching project ${id}:`, apiError);
+    console.error(`Error fetching project ${slug}:`, apiError);
     throw apiError;
   }
 };
@@ -168,11 +166,71 @@ export const getFeaturedProjects = async (
   return getAllProjects({ ...params, featured: true });
 };
 
+/**
+ * Fetches projects by tag
+ * @param tag - The tag to filter by
+ * @param params - Pagination parameters
+ * @returns Promise with filtered projects list and pagination data
+ */
+export const getProjectsByTag = async (
+  tag: string,
+  params: Omit<GetAllProjectsParams, "featured"> = {}
+): Promise<ProjectsResponse> => {
+  try {
+    const response = await getAllProjects(params);
+
+    // Filter by tag on client side
+    const filteredData = response.data.filter((project) =>
+      project.tags.includes(tag)
+    );
+
+    return {
+      ...response,
+      data: filteredData,
+    };
+  } catch (error) {
+    const apiError = handleApiError(error);
+    console.error(`Error fetching projects by tag ${tag}:`, apiError);
+    throw apiError;
+  }
+};
+
+/**
+ * Fetches projects by stack/technology
+ * @param tech - The technology to filter by
+ * @param params - Pagination parameters
+ * @returns Promise with filtered projects list and pagination data
+ */
+export const getProjectsByStack = async (
+  tech: string,
+  params: Omit<GetAllProjectsParams, "featured"> = {}
+): Promise<ProjectsResponse> => {
+  try {
+    const response = await getAllProjects(params);
+
+    // Filter by stack on client side
+    const filteredData = response.data.filter((project) =>
+      project.stack.includes(tech)
+    );
+
+    return {
+      ...response,
+      data: filteredData,
+    };
+  } catch (error) {
+    const apiError = handleApiError(error);
+    console.error(`Error fetching projects by stack ${tech}:`, apiError);
+    throw apiError;
+  }
+};
+
 // Example usage with React hooks (optional helper)
 export const useProjects = () => {
   return {
     getAllProjects,
-    getProjectById,
+    getProjectBySlug,
     getFeaturedProjects,
+    getProjectsByTag,
+    getProjectsByStack,
   };
 };
