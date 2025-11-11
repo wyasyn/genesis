@@ -7,19 +7,19 @@ export default function ContentSection() {
       <div className="container space-y-8 px-6 md:space-y-12">
         <div className="mx-auto max-w-xl space-y-6 text-center md:space-y-12">
           <h2 className="text-balance text-foreground text-4xl font-medium lg:text-5xl">
-            Yasin Walum is a Full-Stack Developer Crafting Digital Experiences
+            Hi, I’m Yasin Walum — Full-Stack Developer & AI Enthusiast
           </h2>
           <p>
-            Based in Kampala, Uganda, I transform ideas into powerful web
-            applications with 5+ years of experience. Specializing in modern
-            tech stacks, I deliver scalable solutions that blend elegant code
-            with exceptional user experiences.
+            I’m a Kampala-based developer passionate about creating seamless
+            digital experiences. With over five years of hands-on experience, I
+            design and build modern web and mobile applications that are fast,
+            scalable, and crafted with care.
           </p>
         </div>
         <Image
           className="rounded-(--radius) grayscale hover:grayscale-0 transition-all aspect-video w-full object-cover object-top"
           src="https://res.cloudinary.com/dkdteb9m5/image/upload/v1739381087/dd5nxmqvootvmztvr3gg.jpg"
-          alt="team image"
+          alt="Yasin Walum working on a project"
           width={2940}
           height={1960}
           priority
@@ -31,38 +31,38 @@ export default function ContentSection() {
               <h3 className="text-sm font-medium">Fast Learner</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              Quick to adapt to new technologies and frameworks, constantly
-              staying ahead of industry trends.
+              Quick to grasp new tools and frameworks, always evolving with
+              technology.
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Cpu className="size-4" />
-              <h3 className="text-sm font-medium">Full-Stack</h3>
+              <h3 className="text-sm font-medium">Full-Stack Builder</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              Experienced in both frontend and backend development with modern
-              tech stacks.
+              From clean backend architecture to intuitive UI, I bring ideas to
+              life across the stack.
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Lock className="size-4" />
-              <h3 className="text-sm font-medium">Reliable</h3>
+              <h3 className="text-sm font-medium">Reliable Partner</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              Committed to delivering quality code with attention to security
-              and best practices.
+              I value precision, consistency, and security in every line of
+              code.
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Sparkles className="size-4" />
-              <h3 className="text-sm font-medium">Creative</h3>
+              <h3 className="text-sm font-medium">Creative Thinker</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              Bringing innovative solutions to complex problems with thoughtful
-              design thinking.
+              I combine logic and design thinking to build elegant, impactful
+              digital solutions.
             </p>
           </div>
         </div>

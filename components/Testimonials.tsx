@@ -46,8 +46,8 @@ export function TestimonialsStars() {
         >
           <SectionHeader
             text="Testimonials"
-            title="What Clients Say"
-            description="Hear from our satisfied clients who have transformed their projects with SmoothUI."
+            title="Trusted by Clients and Teams"
+            description="Feedback from those I’ve worked with — reflecting quality, reliability, and collaboration in every project."
           />
         </motion.div>
 
