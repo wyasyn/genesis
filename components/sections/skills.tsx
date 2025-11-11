@@ -1,20 +1,19 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Code2, Database, Brain, Smartphone } from "lucide-react";
 import { ReactNode } from "react";
+import { SectionHeader } from "../section-header";
 
 export default function Features() {
   return (
     <section className="py-16 md:py-32">
-      <div className="@container container">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-balance text-4xl text-foreground lg:text-5xl ">
-            Technical Expertise Across the Stack
-          </h2>
-          <p className="mt-4">
-            Comprehensive skills in modern technologies, from frontend to
-            backend, AI, and mobile development.
-          </p>
-        </div>
+      <div className="@container container border-t px-6">
+        <SectionHeader
+          title="Technical Expertise Across the Stack"
+          text="Skills"
+          description=" Comprehensive skills in modern technologies, from frontend to
+            backend, AI, and mobile development."
+        />
+
         <div className="@min-4xl:max-w-full mx-auto mt-8 grid max-w-sm grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 [--color-background:var(--color-muted)] [--color-card:var(--color-muted)] *:text-center md:mt-16 dark:[--color-muted:var(--color-zinc-900)]">
           <Card className="group border-0 shadow-none">
             <CardHeader className="pb-3">

@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Code2, Palette } from "lucide-react";
+import { SectionHeader } from "../section-header";
 
 export default function Services() {
   return (
     <section className="dark:bg-muted/25 bg-zinc-50 py-20 md:py-32">
-      <div className="@container container space-y-12">
-        {/* Section Title */}
-        <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-semibold">What I Offer</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Crafting modern, high-performance web experiences — from design to
-            deployment.
-          </p>
-        </div>
+      <div className="@container container border-t px-6 space-y-12">
+        <SectionHeader
+          title="What I Offer"
+          text="Services"
+          description="Crafting modern, high-performance web experiences — from design to
+            deployment."
+        />
 
         {/* Bento Grid */}
         <div className="mx-auto grid gap-4 sm:grid-cols-5">
@@ -63,10 +62,10 @@ export default function Services() {
             </p>
 
             <div className="flex justify-center gap-6">
-              <div className="bg-muted/40 dark:bg-muted/20 flex aspect-square size-16 items-center justify-center rounded-[8px] border p-3 shadow-inner">
+              <div className="bg-muted/40 dark:bg-muted/20 flex aspect-square size-16 items-center justify-center rounded-xl border p-3 shadow-inner">
                 <Palette className="m-auto size-8" />
               </div>
-              <div className="bg-muted/40 dark:bg-muted/20 flex aspect-square size-16 items-center justify-center rounded-[8px] border p-3 shadow-inner">
+              <div className="bg-muted/40 dark:bg-muted/20 flex aspect-square size-16 items-center justify-center rounded-xl border p-3 shadow-inner">
                 <Code2 className="size-8" />
               </div>
             </div>
