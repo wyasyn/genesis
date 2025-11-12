@@ -29,8 +29,8 @@ export const navData = [
     },
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Blogs",
+    href: "/blogs",
     icons: {
       active: IconLibraryFilled,
       inactive: IconLibrary,

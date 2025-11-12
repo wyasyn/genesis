@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { cn, estimateReadTime, formatDate } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,24 +30,6 @@ interface BlogGridProps {
   variant?: "compact" | "featured";
   showViewAll?: boolean;
   viewAllHref?: string;
-}
-
-// Helper function to format dates
-function formatDate(date: Date | null): string {
-  if (!date) return "Not published";
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  }).format(new Date(date));
-}
-
-// Helper function to estimate read time
-function estimateReadTime(content: string): string {
-  const wordsPerMinute = 200;
-  const wordCount = content.split(/\s+/).length;
-  const minutes = Math.ceil(wordCount / wordsPerMinute);
-  return `${minutes} min read`;
 }
 
 export function BlogGrid({

@@ -1,110 +1,155 @@
-/* eslint-disable @next/next/no-img-element */
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Code2, Palette } from "lucide-react";
+"use client";
+import { Code2, Palette, Smartphone, Brain } from "lucide-react";
+import { motion } from "motion/react";
 import { SectionHeader } from "../section-header";
 
 export default function Services() {
   return (
-    <section className="dark:bg-muted/25 bg-zinc-50 py-20 md:py-32">
-      <div className="@container container border-t px-6 space-y-12">
+    <section className="bg-muted/30 py-20 md:py-32">
+      <div className="container space-y-12 px-6">
         <SectionHeader
           title="What I Offer"
           text="Services"
-          description="Crafting modern, high-performance web experiences — from design to
-            deployment."
+          description="Crafting modern, high-performance web experiences — from design to deployment."
         />
 
         {/* Bento Grid */}
         <div className="mx-auto grid gap-4 sm:grid-cols-5">
-          {/* Services Overview */}
-          <Card className="group overflow-hidden shadow-md hover:shadow-lg transition-all sm:col-span-3 sm:rounded-none sm:rounded-tl-xl">
-            <CardHeader>
-              <div className="md:p-6">
-                <p className="text-xl font-semibold">Services I Offer</p>
-                <p className="text-muted-foreground mt-3 max-w-sm text-sm">
-                  From concept to deployment, I deliver tailored full-stack
-                  solutions that blend functionality with thoughtful design.
+          {/* Web Development - Large Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all hover:shadow-xl sm:col-span-3"
+          >
+            <div className="relative h-full min-h-[400px]">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7 }}
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2944&auto=format&fit=crop"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700"
+                alt="web development workspace"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 space-y-3 p-6 md:p-8">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-lg bg-primary/10 p-2 backdrop-blur-sm">
+                    <Code2 className="size-5 text-primary" />
+                  </div>
+                  <p className="text-xl font-semibold">Web Development</p>
+                </div>
+                <p className="max-w-md text-sm text-muted-foreground">
+                  Designing and developing fast, scalable, and responsive
+                  websites and web apps using modern technologies like Next.js,
+                  React, and Node.js.
                 </p>
               </div>
-            </CardHeader>
-
-            <div className="relative h-fit pl-6 md:pl-12">
-              <div className="bg-background overflow-hidden rounded-tl-lg border-l border-t dark:bg-zinc-950">
-                <img
-                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2940&auto=format&fit=crop"
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                  alt="web development workspace"
-                />
-              </div>
             </div>
-          </Card>
+          </motion.div>
 
-          {/* Full Stack */}
-          <Card className="group overflow-hidden shadow-md hover:shadow-lg transition-all sm:col-span-2 sm:rounded-none sm:rounded-tr-xl">
-            <p className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl">
-              Full-Stack Web Development
-            </p>
-            <CardContent className="mt-auto h-fit">
-              <div className="relative max-sm:mb-6 overflow-hidden rounded-r-lg border">
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2944&auto=format&fit=crop"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  alt="full stack development"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* UI/UX */}
-          <Card className="group p-6 shadow-md hover:shadow-lg transition-all sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12">
-            <p className="mx-auto mb-10 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">
-              UI/UX Design & Prototyping
-            </p>
-
-            <div className="flex justify-center gap-6">
-              <div className="bg-muted/40 dark:bg-muted/20 flex aspect-square size-16 items-center justify-center rounded-xl border p-3 shadow-inner">
-                <Palette className="m-auto size-8" />
-              </div>
-              <div className="bg-muted/40 dark:bg-muted/20 flex aspect-square size-16 items-center justify-center rounded-xl border p-3 shadow-inner">
-                <Code2 className="size-8" />
-              </div>
-            </div>
-          </Card>
-
-          {/* API Development */}
-          <Card className="group relative shadow-md hover:shadow-lg transition-all sm:col-span-3 sm:rounded-none sm:rounded-br-xl">
-            <CardHeader className="p-6 md:p-12">
-              <p className="text-xl font-semibold">
-                API Development & Integration
-              </p>
-              <p className="text-muted-foreground mt-2 max-w-sm text-sm">
-                Building robust APIs and connecting third-party services to
-                create powerful, connected ecosystems.
-              </p>
-            </CardHeader>
-            <CardContent className="relative h-fit px-6 pb-6 md:px-12 md:pb-12">
-              <div className="grid grid-cols-4 gap-2 md:grid-cols-6">
-                {[
-                  "https://oxymor-ns.tailus.io/logos/linear.svg",
-                  "https://oxymor-ns.tailus.io/logos/netlify.svg",
-                  "https://oxymor-ns.tailus.io/logos/github.svg",
-                ].map((src, i) => (
-                  <div
-                    key={i}
-                    className="bg-muted/50 flex aspect-square items-center justify-center rounded-lg border p-4 hover:bg-muted/70 transition-all"
-                  >
-                    <img
-                      className="m-auto size-8 invert dark:invert-0"
-                      src={src}
-                      alt="Integration logo"
-                      width="32"
-                      height="32"
-                    />
+          {/* Mobile App Development */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all hover:shadow-xl sm:col-span-2"
+          >
+            <div className="relative h-full min-h-[400px]">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7 }}
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700"
+                alt="mobile app development"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 space-y-3 p-6">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-lg bg-primary/10 p-2 backdrop-blur-sm">
+                    <Smartphone className="size-5 text-primary" />
                   </div>
-                ))}
+                  <p className="text-lg font-semibold">
+                    Mobile App Development
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Creating cross-platform mobile applications with seamless
+                  performance and beautiful UIs using Flutter and React Native.
+                </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </motion.div>
+
+          {/* UI/UX Design */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all hover:shadow-xl sm:col-span-2"
+          >
+            <div className="relative h-full min-h-[400px]">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7 }}
+                src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2864&auto=format&fit=crop"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700"
+                alt="UI/UX design prototyping"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 space-y-3 p-6">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-lg bg-primary/10 p-2 backdrop-blur-sm">
+                    <Palette className="size-5 text-primary" />
+                  </div>
+                  <p className="text-lg font-semibold">
+                    UI/UX Design & Prototyping
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Crafting intuitive interfaces that delight users and drive
+                  engagement with thoughtful design.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* AI & ML Solutions */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all hover:shadow-xl sm:col-span-3"
+          >
+            <div className="relative h-full min-h-[400px]">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7 }}
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2940&auto=format&fit=crop"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700"
+                alt="AI and machine learning visualization"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 space-y-3 p-6 md:p-8">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-lg bg-primary/10 p-2 backdrop-blur-sm">
+                    <Brain className="size-5 text-primary" />
+                  </div>
+                  <p className="text-xl font-semibold">
+                    AI & Machine Learning Solutions
+                  </p>
+                </div>
+                <p className="max-w-md text-sm text-muted-foreground">
+                  Building intelligent systems that leverage machine learning
+                  and data analysis to automate processes and deliver smart
+                  insights.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

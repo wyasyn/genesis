@@ -12,18 +12,17 @@ export default function ProjectsSection() {
           text="My Selected Work"
           description="A showcase of projects that blend creativity with technical excellence. From concept to deployment, each piece represents a commitment to quality and innovation."
         />
-        <div>
-          <Suspense
-            fallback={
-              <Loader
-                title="Fetching Projects"
-                subtitle="Please wait while we fetch projects"
-              />
-            }
-          >
-            <FetchProjects />
-          </Suspense>
-        </div>
+
+        <Suspense
+          fallback={
+            <Loader
+              title="Fetching Projects"
+              subtitle="Please wait while we fetch projects"
+            />
+          }
+        >
+          <FetchProjects />
+        </Suspense>
       </div>
     </section>
   );

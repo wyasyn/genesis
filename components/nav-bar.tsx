@@ -4,8 +4,6 @@ import { NavIcon } from "./nav-icon";
 import { useIsMounted } from "@/hooks";
 import { motion } from "motion/react";
 import { ModeToggle } from "./mode-toggle";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import Link from "next/link";
 import Pic from "./pic";
 
 const Navbar = () => {

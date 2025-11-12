@@ -2,6 +2,7 @@ export const mockProjects = [
   {
     id: "1",
     title: "E-Commerce Platform",
+    slug: "e-commerce-platform",
     description:
       "A full-featured e-commerce platform with real-time inventory management, payment processing, and advanced analytics. Built with modern technologies for optimal performance.",
     tags: ["Web App", "E-commerce", "Analytics"],
@@ -12,12 +13,13 @@ export const mockProjects = [
     stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
     featured: true,
     order: 1,
-    createdAt: new Date("2024-10-15"),
-    updatedAt: new Date("2024-10-28"),
+    createdAt: "2024-10-15",
+    updatedAt: "2024-10-28",
   },
   {
     id: "2",
     title: "AI Content Generator",
+    slug: "ai-content-generator",
     description:
       "An intelligent content generation tool powered by machine learning. Creates high-quality blog posts, social media content, and marketing copy.",
     tags: ["AI/ML", "SaaS", "Content"],
@@ -28,12 +30,13 @@ export const mockProjects = [
     stack: ["React", "Python", "TensorFlow", "FastAPI"],
     featured: true,
     order: 2,
-    createdAt: new Date("2024-09-20"),
-    updatedAt: new Date("2024-10-25"),
+    createdAt: "2024-09-20",
+    updatedAt: "2024-10-25",
   },
   {
     id: "3",
     title: "Project Management Dashboard",
+    slug: "project-management-dashboard",
     description:
       "Collaborative project management tool with real-time updates, task tracking, team communication, and advanced reporting features.",
     tags: ["Dashboard", "Productivity", "Collaboration"],
@@ -43,12 +46,13 @@ export const mockProjects = [
     stack: ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
     featured: false,
     order: 3,
-    createdAt: new Date("2024-08-10"),
-    updatedAt: new Date("2024-10-20"),
+    createdAt: "2024-08-10",
+    updatedAt: "2024-10-20",
   },
   {
     id: "4",
     title: "Mobile Fitness Tracker",
+    slug: "mobile-fitness-tracker",
     description:
       "Track your workouts, nutrition, and progress with this comprehensive fitness app. Features AI-powered workout recommendations.",
     tags: ["Mobile", "Health", "Fitness"],
@@ -59,12 +63,13 @@ export const mockProjects = [
     stack: ["React Native", "Firebase", "TensorFlow Lite"],
     featured: true,
     order: 4,
-    createdAt: new Date("2024-07-05"),
-    updatedAt: new Date("2024-10-18"),
+    createdAt: "2024-07-05",
+    updatedAt: "2024-10-18",
   },
   {
     id: "5",
     title: "Real-Time Chat Application",
+    slug: "real-time-chat-app",
     description:
       "Secure messaging platform with end-to-end encryption, file sharing, video calls, and group chat functionality.",
     tags: ["Communication", "Real-time", "Security"],
@@ -75,7 +80,7 @@ export const mockProjects = [
     stack: ["Next.js", "WebRTC", "Socket.io", "Redis"],
     featured: false,
     order: 5,
-    createdAt: new Date("2024-06-15"),
-    updatedAt: new Date("2024-10-15"),
+    createdAt: "2024-06-15",
+    updatedAt: "2024-10-15",
   },
 ];
